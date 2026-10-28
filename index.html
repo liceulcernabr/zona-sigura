@@ -485,6 +485,38 @@ button{font:inherit;color:inherit;cursor:pointer}
 .checklist{list-style:none;margin:0 0 14px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:6px}
 .checklist li{font-size:.92rem;color:var(--muted)}
 .checklist li.ok{color:var(--mint);font-weight:700}
+
+/* etică */
+.modquote{position:relative;z-index:1;margin:16px 0 0;max-width:60ch;font-family:var(--f-hand);font-size:1.35rem;line-height:1.25;border-left:5px solid #fff;padding:4px 0 4px 14px}
+.modquote cite{display:block;font-family:var(--f-body);font-style:normal;font-size:.8rem;opacity:.85;margin-top:4px}
+.lem{display:flex;flex-direction:column;gap:10px;margin-top:14px}
+.lem-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.lem-row b{min-width:130px}
+.lem-opts{display:flex;gap:8px;flex-wrap:wrap}
+.lem-o{border:2.5px solid var(--line);border-radius:10px;padding:7px 14px;background:var(--paper);font-weight:700}
+.lem-o.on{background:var(--ink);color:var(--paper)}
+.lem-o.ok{background:var(--mint);color:#fff}
+.lem-o.no{background:var(--coral);color:#fff}
+.dil-nav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.dil-nav .tab{font-size:.8rem;padding:6px 10px}
+.dil-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+@media (max-width:640px){.dil-opts{grid-template-columns:1fr}}
+.sim-opt.chosen{background:var(--ink);color:var(--paper)}
+.cyc-switch{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.cyc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:20px;align-items:center}
+@media (max-width:820px){.cyc{grid-template-columns:1fr}}
+.cyc-ring{position:relative;aspect-ratio:1;width:min(100%,480px);max-width:100%;margin-inline:auto;color:var(--cc)}
+.cyc-arrow{position:absolute;inset:0;z-index:0;width:100%;height:100%;animation:spin 30s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.cyc-arrow{animation:none}}
+.cyc-center{z-index:2;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:38%;aspect-ratio:1;border-radius:50%;border:3px solid var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff;font-family:var(--f-display);font-weight:900;font-size:clamp(.75rem,1.6vw,1rem);padding:8px}
+.cyc-center small{font-family:var(--f-body);font-weight:600;font-size:.68rem;opacity:.9;margin-top:4px}
+.cyc-node{z-index:2;position:absolute;transform:translate(-50%,-50%);width:30%;border:2.5px solid var(--line);border-radius:12px;background:var(--card);padding:6px 8px;font-size:clamp(.66rem,1.3vw,.8rem);font-weight:700;line-height:1.2;text-align:center;box-shadow:2px 2px 0 var(--line)}
+.cyc-node b{display:block;font-family:var(--f-display);color:var(--cc)}
+.cyc-node.on{background:var(--cc);color:#fff}
+.cyc-node.on b{color:#fff}
+.cyc-info{border:2.5px solid var(--line);border-radius:14px;padding:16px;background:var(--paper);min-width:0}
+.cyc-info h4{font-size:1.1rem;margin:4px 0 6px}
 /* calendar */
 .cal{display:flex;flex-direction:column;gap:10px}
 .cal-row{display:grid;grid-template-columns:110px 1fr auto;gap:14px;align-items:center;border:2.5px solid var(--line);border-radius:14px;padding:12px 16px;background:var(--card)}
@@ -1345,6 +1377,148 @@ const PORTF = [
   {id:"data", type:"text", label:"Data", ph:"zz.ll.aaaa"}
  ]}
 ];
+
+/* ================= ETICĂ PROFESIONALĂ: extensii ================= */
+THEORY[2].push({h:"8. Fundamentele morale și bullyingul", b:[
+  "Psihologul **Jonathan Haidt** a propus **teoria fundamentelor morale** ca să explice de ce morala diferă de la o cultură la alta, dar are și multe asemănări. Pe scurt, mai multe sisteme psihologice înnăscute stau la baza eticii, iar fiecare cultură (inclusiv cultura unei clase) construiește virtuți pe baza lor:",
+  ["**Grija** (compasiune): sensibilitatea la suferința celuilalt.","**Corectitudinea** (reciprocitate): ce e drept, ce e nedrept.","**Loialitatea** (apartenență): fidelitatea față de grup.","**Respectul** (autoritate): ierarhii, roluri, reguli.","**Puritatea** (smerenie): ce e „curat” și ce ne provoacă dezgust.","**Libertatea** (opusă opresiunii): reacția la dominare și control."],
+  "Bullyingul **deturnează** unele dintre aceste fundamente: loialitatea devine „nu turnăm”, respectul devine supunere față de liderul negativ, iar dezgustul („e ciudat”, „miroase”) justifică excluderea. În același timp, grija și corectitudinea sunt reduse la tăcere.",
+  "Prevenția lucrează invers: activează **grija** și **corectitudinea** și redefinește **loialitatea**: „Suntem loiali clasei noastre când îi apărăm pe toți, nu când tăcem.”",
+  "Primatologul **Frans de Waal** arată în discursul său TED că rădăcinile empatiei și ale simțului dreptății se văd chiar și la animale. În experimentul cu maimuțele capucin, cea care primește o recompensă mai slabă pentru aceeași sarcină o refuză. Simțul nedreptății e profund, iar elevii îl au la fel de puternic.",
+  "**Atenție la efectul Dunning–Kruger**: tindem să ne supraestimăm competența acolo unde știm cel mai puțin. Cercetările arată că adulții din școală subestimează frecvent bullyingul raportat de elevi (Bradshaw și colab., 2007). Concluzia practică: întrebați elevii, nu presupuneți."
+]});
+THEORY[3].push({h:"8. Dileme etice în intervenție", b:[
+  {q:"O dilemă etică este o problemă morală dificilă, care implică două sau mai multe variante de acțiune ce se exclud reciproc și sunt egale moral.", s:"Jane M. Durgin"},
+  "Cele mai grele decizii ale profesorului nu sunt între bine și rău, ci între **două lucruri bune** (confidențialitate și siguranță, loialitate față de un coleg și protecția elevului) sau între **două rele**, dintre care unul e mai mic.",
+  "Trei întrebări care nu au mereu același răspuns: **Este legal? Este etic? Este moral?** Legea stabilește minimul obligatoriu. Etica profesională descrie ce așteaptă comunitatea de la un profesor. Morala ține de conștiința fiecăruia.",
+  "**Un model în cinci pași pentru decizie:**",
+  ["Ce spune legea și procedura școlii?","Ce principii sunt în tensiune (grijă, corectitudine, loialitate, autoritate, libertate)?","Cine este cel mai vulnerabil în această situație?","**Testul transparenței**: aș putea să-mi explic decizia public, în fața elevilor, a părinților și a colegilor?","Documentez decizia și motivele ei."],
+  {q:"Cele mai întunecate locuri din iad sunt rezervate celor care își mențin neutralitatea în perioade de criză morală.", s:"citat atribuit frecvent lui Dante Alighieri (nu apare ca atare în Divina Comedie, dar e bun punct de pornire pentru discuția despre martori)"}
+]});
+THEORY[3].forEach(s=>{ if(s.h.startsWith("5. Comunicarea cu părinții")) s.b.push({q:"O persoană caldă și încrezătoare induce putere și stârnește admirație, dar numai după ce îi câștigi încrederea, puterea ta este considerată un dar și nu o amenințare.", s:"Amy Cuddy"}, "În discuția cu un părinte supărat: întâi **căldura** (ascult, înțeleg îngrijorarea), apoi **competența** (procedura, pașii, termenele). În ordine inversă, competența e percepută ca amenințare."); });
+THEORY[4].push({h:"9. Etica profesională și cultura școlii", b:[
+  "Cuvântul **etică** vine din grecescul *ethos*: caracter. Etica este studiul principiilor morale și al rolului lor în viața socială. Ea răspunde la întrebări pe care orice profesor și le pune când gestionează un caz de bullying: **Cum trebuie să-i tratez pe ceilalți? Ce fel de persoană ar trebui să fiu? Cum trebuie să mă comport?**",
+  "Codurile de conduită profesională, din educație și din alte domenii, se sprijină pe aceleași valori. Aplicate în școală, ele devin instrumente antibullying:",
+  ["**Încredere**: elevul știe că un adult îl va asculta și va acționa.","**Transparență**: reguli și consecințe cunoscute dinainte.","**Imparțialitate**: aceleași reguli pentru elevul „preferat” și pentru cel „problematic”.","**Nediscriminare**: nicio glumă despre origine, corp, religie sau orientare nu e „doar o glumă”.","**Confidențialitate și protecția datelor**: cazurile nu se discută pe grupuri, capturile nu circulă.","**Integritate**: ce spunem la ora de dirigenție facem și în cancelarie.","**Competență și profesionalism**: formare continuă, proceduri cunoscute.","**Respect față de lege și față de regulile de etică profesională**."],
+  "**Cercul vicios și cercul virtuos.** În școală, ca în orice organizație, încrederea și neîncrederea se autoalimentează. Tăcerea adulților produce martori tăcuți, victime care nu mai raportează și un climat de frică. Regulile aplicate consecvent produc raportare, intervenție rapidă, martori care devin apărători și încredere. Aplicația „Cercul clasei” din laboratorul M4 arată ambele mecanisme.",
+  "**Cultura organizațională.** Modelul valorilor concurente (Cameron și Quinn) descrie patru tipuri de cultură: **orientată spre oameni** (spirit de familie, mentorat, încredere), **antreprenorială** (inovație, inițiativă), **ierarhică** (proceduri, control, stabilitate) și **orientată spre rezultate** (ținte, competitivitate). O școală care previne bullyingul combină grija culturii orientate spre oameni cu claritatea procedurilor din cultura ierarhică. O cultură exclusiv orientată spre rezultate („câștig cu orice preț”) tolerează mai ușor umilirea celor „slabi”.",
+  "**Leadership.** Jim Collins descrie liderul de nivel 5 prin combinația dintre **umilință personală** și **voință profesională intensă**. În prevenția bullyingului, liderul nu e doar directorul: e dirigintele care își asumă cazul, profesorul care intervine în pauză, elevul care spune „gata”.",
+  {q:"Controlul nu este leadership; managementul nu este leadership; leadershipul este leadership. Dacă vreți să conduceți, investiți măcar 50% din timpul dumneavoastră în a vă dezvolta în privința scopului, eticii, principiilor, motivației și comportamentului.", s:"Dee Hock"},
+  {q:"O educație bună este izvorul întregului bine în lume.", s:"citat atribuit lui Immanuel Kant"}
+]});
+BIBLIO.push(
+  "Haidt, J. (2012). The Righteous Mind: Why Good People Are Divided by Politics and Religion. New York: Pantheon.",
+  "Cameron, K. S., Quinn, R. E. (2011). Diagnosing and Changing Organizational Culture (ed. a 3-a). San Francisco: Jossey-Bass.",
+  "Collins, J. (2001). Good to Great. New York: HarperBusiness.",
+  "Bradshaw, C. P., Sawyer, A. L., O'Brennan, L. M. (2007). Bullying and peer victimization at school: Perceptual differences between students and school staff. School Psychology Review, 36(3), 361–382.",
+  "Dănescu, F. (2023). Etica profesională [prezentare]."
+);
+
+const MODQUOTE = {
+  1:{q:"Cum trebuie să-i tratăm pe ceilalți? Ce fel de persoană ar trebui să fiu?", s:"întrebările de bază ale eticii (ethos = caracter)"},
+  2:{q:"Suntem loiali clasei noastre când îi apărăm pe toți, nu când tăcem.", s:"loialitatea, redefinită"},
+  3:{q:"Cele mai grele probleme etice nu sunt între bine și rău, ci între două lucruri bune.", s:"despre dilema etică"},
+  4:{q:"Viitorul nu este despre tehnologie. Viitorul este despre etică.", s:"F. Dănescu, Etica profesională (2023)"}
+};
+
+VIDEOS.splice(4,0,{slug:"frans_de_waal_do_animals_have_morals", t:"Moral behavior in animals", by:"Frans de Waal · TED", m:[2,4], c:"#E0A21A", src:"TED",
+  q:["Ce comportamente de empatie și de corectitudine observă Frans de Waal la animale?","Ce se întâmplă în experimentul cu maimuțele capucin? Ce spune asta despre simțul nedreptății?","Cum ai folosi experimentul la o oră de dirigenție despre corectitudine?"]});
+
+/* agendă: integrare în sesiuni */
+PLANS[2].b.splice(3,0,["",30,"P","Legal? Etic? Moral?","Aplicația din laboratorul M1: șase situații din școală, analizate pe trei planuri."]);
+PLANS[3].b[2][4] += " Fundamentele morale (Haidt): cum deturnează bullyingul loialitatea și autoritatea.";
+PLANS[5].b[1][4] = "Jon Ronson, Brené Brown și Frans de Waal, cu fișele de vizionare.";
+PLANS[7].b[2] = ["16:50",50,"P","Joc de rol: Conversațiile dificile","Tema sincron M3, în triade. Folosiți Fișa 3.1."];
+PLANS[7].b.splice(3,0,["17:40",30,"P","Dileme etice ale profesorului","Aplicația din laboratorul M3: votăm individual, apoi discutăm principiile aflate în tensiune. Introducem testul transparenței."]);
+PLANS[9].b[1] = ["16:15",45,"T","Whole-school, climatul și etica școlii","Suport teoretic M4, secțiunile 1–3 și 9: Olweus, KiVa, CASEL, valorile eticii profesionale, cultura organizațională. Aplicația „Cercul clasei” (vicios și virtuos) ca suport vizual."];
+
+/* ---------- Aplicație M1: Legal? Etic? Moral? ---------- */
+const LEM = [
+  {t:"Diriginta citește în fața clasei mesajele din telefonul confiscat al unui elev, „ca lecție”.", a:["Nu","Nu","Nu"], e:"Încalcă dreptul la viață privată și la corespondență, umilește public elevul și contrazice tot ce predăm despre respect. Telefonul confiscat nu dă dreptul de a-i citi conținutul."},
+  {t:"Un elev îi spune profesorului, sub promisiunea secretului, că e amenințat de colegi. Profesorul anunță consilierul și Grupul anti-bullying și îi spune elevului ce face.", a:["Da","Da","Depinde"], e:"Legal și etic: siguranța elevului primează, iar procedura obligă la intervenție. Moral, unii simt că promisiunea a fost încălcată. De aceea, de la început, nu promitem secretul total: „Nu pot păstra secretul dacă ești în pericol, dar îți spun mereu ce fac.”"},
+  {t:"Un elev scrie zilnic câte un comentariu ironic, fără insulte, sub fiecare postare a unei colege.", a:["Depinde","Nu","Nu"], e:"Un comentariu ironic nu e ilegal. Repetat zilnic, cu o țintă clară, devine hărțuire. Nu tot ce e legal e și etic: aici e un caz tipic de cyberbullying."},
+  {t:"Un părinte face captură din grupul clasei și o postează pe Facebook, cu numele copiilor, ca „să vadă toată lumea ce se întâmplă”.", a:["Nu","Nu","Depinde"], e:"Publicarea datelor și a conversațiilor unor minori fără acord încalcă protecția datelor personale. Intenția poate fi protectoare (de aici „depinde” pe plan moral), dar efectul este o nouă expunere publică."},
+  {t:"Un elev filmează o agresiune din curte și trimite filmarea doar dirigintei.", a:["Da","Da","Da"], e:"Este strategia „Documentează” din cele 5D: proba ajunge doar la adultul care poate interveni. Diferența esențială este între a documenta și a distribui."},
+  {t:"Un profesor aude porecle umilitoare în pauză și nu intervine, pentru că „nu e dirigintele clasei”.", a:["Nu","Nu","Nu"], e:"Normele metodologice cer intervenția oricărui cadru didactic care observă bullyingul. Tăcerea adultului transmite clasei că umilirea e acceptabilă."}
+];
+function legalHTML(){ return ""; }
+function mountLegal(root){
+  const body=root.querySelector(".app-body"), sc=root.querySelector("[data-score]");
+  let i=0, pts=0;
+  const DIMS=["Este legal?","Este etic?","Este moral?"], OPTS=["Da","Nu","Depinde"];
+  function draw(){
+    if(i>=LEM.length){
+      body.innerHTML=`<p style="font-family:var(--f-display);font-weight:900;font-size:1.6rem">${pts}/${LEM.length*3}</p><p>${pts>=15?"Foarte bine. Distingi clar planul legal de cel etic și moral.":"Revezi situațiile în care legalul și eticul nu coincid: acolo se ascund cele mai multe cazuri de bullying."}</p><div class="note" style="margin-top:12px"><b>De reținut:</b> legea stabilește minimul. Etica profesională cere mai mult decât minimul.</div><div class="copyrow"><button class="btn small sun" data-re>Reia</button></div>`;
+      body.querySelector("[data-re]").onclick=()=>{i=0;pts=0;draw();}; if(pts>=15) confetti(); return;
+    }
+    const s=LEM[i]; const pick=[null,null,null];
+    body.innerHTML=`<p class="hint">Situația ${i+1} din ${LEM.length}. Răspunde pe fiecare plan, apoi verifică.</p><div class="sort-card"><p>${s.t}</p></div><div class="lem">${DIMS.map((d,k)=>`<div class="lem-row"><b>${d}</b><div class="lem-opts">${OPTS.map(o=>`<button class="lem-o" data-d="${k}" data-o="${o}">${o}</button>`).join("")}</div></div>`).join("")}</div><div class="copyrow"><button class="btn sun small" data-check disabled>Verifică</button></div><div class="feedback" data-fb></div>`;
+    const ck=body.querySelector("[data-check]");
+    $$(".lem-o",body).forEach(b=>b.onclick=()=>{ const k=+b.dataset.d; pick[k]=b.dataset.o; $$(`.lem-o[data-d="${k}"]`,body).forEach(x=>x.classList.toggle("on",x===b)); ck.disabled=pick.includes(null); });
+    ck.onclick=()=>{
+      let g=0; DIMS.forEach((_,k)=>{ const good=pick[k]===s.a[k]; if(good) g++; $$(`.lem-o[data-d="${k}"]`,body).forEach(x=>{ x.disabled=true; if(x.dataset.o===s.a[k]) x.classList.add("ok"); else if(x.dataset.o===pick[k]) x.classList.add("no"); }); });
+      pts+=g; sc.textContent=`${pts}/${LEM.length*3}`; ck.hidden=true;
+      const fb=body.querySelector("[data-fb]"); fb.className="feedback show "+(g===3?"ok":"no");
+      fb.innerHTML=`<b>${g}/3.</b> Răspuns de referință: legal: ${s.a[0]} · etic: ${s.a[1]} · moral: ${s.a[2]}.<br>${s.e}<div class="copyrow"><button class="btn small" data-n>${i<LEM.length-1?"Următoarea →":"Rezultat"}</button></div>`;
+      fb.querySelector("[data-n]").onclick=()=>{i++;draw();};
+    };
+  }
+  sc.textContent=`0/${LEM.length*3}`; draw();
+}
+
+/* ---------- Aplicație M3: Dileme etice ---------- */
+const DILEMMAS = [
+  {t:"Secretul", s:"Bianca (clasa a X-a) îți spune că e hărțuită online de luni de zile, dar te roagă insistent să nu spui nimănui: „Dacă află părinții sau dirigintele, e și mai rău.”", a:"Respecți dorința ei și o sprijini doar tu, discret.", b:"Îi explici că trebuie să anunți consilierul și dirigintele și o implici în fiecare pas.", p:["Grija","Libertatea (autonomia elevei)","Respectul pentru procedură"], g:"Practica recomandă varianta B. Siguranța primează, iar procedura obligă la intervenție. Autonomia Biancăi se respectă prin implicarea ei în decizii (cine află, când, cum), nu prin tăcere."},
+  {t:"Colegul de cancelarie", s:"Un coleg cu experiență face des, la ore, glume umilitoare despre greutatea unui elev. Elevii râd. Colegul e respectat și îți e prieten.", a:"Vorbești cu el între patru ochi, direct și colegial.", b:"Nu spui nimic: nu e treaba ta să-ți judeci colegii.", p:["Loialitatea (față de coleg)","Grija (față de elev)","Corectitudinea"], g:"Varianta A. Loialitatea față de un coleg nu poate trece înaintea protecției unui elev. O discuție privată, pe fapte, e primul pas. Dacă nu se schimbă nimic, se informează conducerea."},
+  {t:"Aceeași regulă pentru toți?", s:"Andrei a agresat un coleg. Afli că acasă e victima violenței. Regulamentul prevede pentru fapta lui o sancțiune clară.", a:"Aplici sancțiunea la fel ca pentru orice elev.", b:"Renunți la sancțiune și te concentrezi doar pe sprijin.", p:["Corectitudinea","Grija","Imparțialitatea"], g:"Nicio variantă nu e suficientă singură. Practica recomandă consecința prevăzută (imparțialitate) plus sprijin: consiliere, semnalare către structurile de protecție a copilului, plan de reparare. Grija nu anulează responsabilitatea."},
+  {t:"Părinții cer un nume", s:"Părinții elevului agresat cer numele elevului care a agresat și spun că vor merge direct la familia lui „să lămurească lucrurile”.", a:"Le dai numele: au dreptul să știe.", b:"Nu dai detalii despre celălalt copil și le explici pașii procedurii și termenele.", p:["Transparența","Confidențialitatea","Siguranța tuturor copiilor"], g:"Varianta B. Transparența privește procedura (ce face școala, când, cine), nu datele celuilalt copil. O confruntare între familii poate escalada și poate pune în pericol ambii copii."},
+  {t:"Interdicția totală", s:"După trei filmări umilitoare postate online, un coleg propune interzicerea completă a telefoanelor în școală, inclusiv în pauze.", a:"Susții interdicția totală: siguranța înainte de toate.", b:"Propui reguli clare de folosire, educație digitală și sancțiuni pentru filmare fără acord.", p:["Autoritatea","Libertatea","Siguranța"], g:"Nu există un răspuns unic. Interdicția poate reduce filmările din școală, dar nu oprește cyberbullyingul de acasă și nu formează abilități. Multe școli combină reguli ferme (fără filmări, telefoane în ghiozdan la ore) cu educație digitală. Discuția contează mai mult decât varianta aleasă."}
+];
+function mountDilemmas(root){
+  const body=root.querySelector(".app-body"), sc=root.querySelector("[data-score]");
+  const votes=store.get("dilemmas",{}); let i=0;
+  function draw(){
+    const d=DILEMMAS[i], v=votes[i];
+    sc.textContent=`${Object.keys(votes).length}/${DILEMMAS.length} decise`;
+    body.innerHTML=`<div class="dil-nav">${DILEMMAS.map((x,k)=>`<button class="tab" aria-selected="${k===i}" data-i="${k}">${k+1}. ${x.t}</button>`).join("")}</div><div class="sim-scene"><div class="time">${d.t}</div><p>${d.s}</p><div class="dil-opts"><button class="sim-opt ${v==="a"?"chosen":""}" data-v="a"><b>A.</b> ${d.a}</button><button class="sim-opt ${v==="b"?"chosen":""}" data-v="b"><b>B.</b> ${d.b}</button></div></div><div data-out>${v?out(d,v):""}</div>`;
+    $$("[data-i]",body).forEach(b=>b.onclick=()=>{i=+b.dataset.i;draw();});
+    $$("[data-v]",body).forEach(b=>b.onclick=()=>{votes[i]=b.dataset.v; store.set("dilemmas",votes); draw();});
+  }
+  const out=(d,v)=>`<div class="debrief"><h5>Ai ales varianta ${v.toUpperCase()}</h5><p><b>Principii în tensiune:</b> ${d.p.map(x=>`<span class="chip t" style="margin:2px">${x}</span>`).join("")}</p><p style="margin-top:8px"><b>Ce recomandă practica:</b> ${d.g}</p><p style="margin-top:8px;color:var(--muted)"><b>Testul transparenței:</b> ai putea explica decizia ta în fața elevilor, a părinților și a colegilor?</p>${i<DILEMMAS.length-1?`<div class="copyrow"><button class="btn small" data-next>Dilema următoare →</button></div>`:""}</div>`;
+  body.addEventListener("click",e=>{ if(e.target.closest("[data-next]")){ i++; draw(); } });
+  draw();
+}
+
+/* ---------- Aplicație M4: Cercul clasei ---------- */
+const CYCLES = {
+  vicios:{c:"var(--coral)", t:"Cercul vicios", steps:[
+    ["Adulții tac","„Sunt copii, trec peste.” Comportamentul nu are consecințe."],
+    ["Agresorul câștigă statut","Publicul râde. Umilirea devine o cale sigură spre popularitate."],
+    ["Martorii învață să tacă","Fiecare dezaprobă în gând, dar crede că ceilalți aprobă."],
+    ["Victimele nu mai raportează","„Oricum nu se întâmplă nimic.” Problemele devin invizibile."],
+    ["Climat de frică","Elevii evită pauzele, unii lipsesc. Învățarea are de suferit."],
+    ["Încrederea în școală scade","Părinții rezolvă singuri, pe grupuri. Adulții află ultimii, iar cercul se reia."]]},
+  virtuos:{c:"var(--mint)", t:"Cercul virtuos", steps:[
+    ["Reguli clare, aplicate consecvent","Toți adulții reacționează la fel, la orice umilire."],
+    ["Elevii raportează","Există un adult de încredere și un canal anonim."],
+    ["Intervenție rapidă","Procedura funcționează. Victima e protejată, agresorul e responsabilizat."],
+    ["Martorii devin apărători","Curajul social e recunoscut. Râsul nu mai e recompensă."],
+    ["Climat de siguranță","Elevii își asumă regulile clasei și neticheta grupului."],
+    ["Încredere și învățare","Părinții colaborează cu școala, iar încrederea întărește regulile."]]}
+};
+function mountCycle(root){
+  const body=root.querySelector(".app-body"); let mode="vicios", sel=0;
+  function draw(){
+    const C=CYCLES[mode], n=C.steps.length;
+    body.innerHTML=`<p class="hint">Încrederea și neîncrederea se autoalimentează, ca în orice organizație. Comută între cele două cercuri și atinge fiecare etapă.</p><div class="cyc-switch" role="tablist"><button class="tab" aria-selected="${mode==="vicios"}" data-m="vicios">🔻 Cercul vicios</button><button class="tab" aria-selected="${mode==="virtuos"}" data-m="virtuos">🔺 Cercul virtuos</button></div>
+    <div class="cyc"><div class="cyc-ring" style="--cc:${C.c}"><div class="cyc-center" style="background:${C.c}">${C.t}<small>${mode==="vicios"?"tăcere → frică → tăcere":"reguli → încredere → reguli"}</small></div>${C.steps.map((s,k)=>{const a=-90+k*360/n;const x=50+Math.cos(a*Math.PI/180)*40,y=50+Math.sin(a*Math.PI/180)*40;return `<button class="cyc-node ${k===sel?"on":""}" style="left:${x}%;top:${y}%;--cc:${C.c}" data-k="${k}"><b>${k+1}</b>${s[0]}</button>`;}).join("")}<svg class="cyc-arrow" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width=".8" stroke-dasharray="3 3"/><path d="M50 10 l-3 -2.2 v4.4z" fill="currentColor"/></svg></div>
+    <div class="cyc-info"><span class="eyebrow">Etapa ${sel+1} din ${n}</span><h4>${C.steps[sel][0]}</h4><p>${C.steps[sel][1]}</p>${mode==="vicios"?`<div class="note" style="margin-top:12px;border-color:var(--mint)"><b>Unde rupi cercul?</b> Etapa corespunzătoare din cercul virtuos: <b>${CYCLES.virtuos.steps[sel][0]}</b>. ${CYCLES.virtuos.steps[sel][1]}</div>`:""}<div class="copyrow"><button class="btn small" data-step>Etapa următoare ↻</button></div></div></div>`;
+    $$("[data-m]",body).forEach(b=>b.onclick=()=>{mode=b.dataset.m;draw();});
+    $$("[data-k]",body).forEach(b=>b.onclick=()=>{sel=+b.dataset.k;draw();});
+    body.querySelector("[data-step]").onclick=()=>{sel=(sel+1)%n;draw();};
+  }
+  draw();
+}
 
 /* ================= GENERATOR .DOCX ================= */
 const xesc = s => String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
@@ -2292,16 +2466,17 @@ function renderModule(n){
   const vids=VIDEOS.filter(v=>v.m.includes(n)), cs=CASES.filter(c=>c.m.includes(n));
   const ep=EPISODES.find(e=>e.m===n);
   let labs="";
-  if(n===1) labs = appFrame("Joc","Conflict sau bullying?","",'',"lab-sorter") + appFrame("Cărți","Formele bullyingului","Atinge cărțile ca să le întorci.",formsHTML(),"lab-forms") + appFrame("Detectiv","Feed-ul liceului","",'',"lab-feed");
+  if(n===1) labs = appFrame("Joc","Conflict sau bullying?","",'',"lab-sorter") + appFrame("Cărți","Formele bullyingului","Atinge cărțile ca să le întorci.",formsHTML(),"lab-forms") + appFrame("Detectiv","Feed-ul liceului","",'',"lab-feed") + appFrame("Etică","Legal? Etic? Moral?","",'',"lab-lem");
   if(n===2) labs = appFrame("Explorare","Cercul bullyingului","",rolesHTML(),"lab-roles") + appFrame("Descoperă","Aisbergul cauzelor","",bergHTML(),"lab-berg") + appFrame("Sortare","Modelul ecologic al factorilor de risc","",ecoHTML(),"lab-eco");
-  if(n===3) labs = appFrame("Simulator","10:15, intervenția ta","Alegi ce faci, minut cu minut. Fiecare decizie mută cei trei indicatori.",'',"lab-sim") + appFrame("Ordonare","Pașii intervenției","",'',"lab-order") + appFrame("Kit","Urgență digitală: ce face victima?","",'',"lab-ev") + appFrame("Constructor","Mesajul „eu”","",'',"lab-imsg");
-  if(n===4) labs = appFrame("Diagnoză","Radarul climatului școlar","",'',"lab-radar") + appFrame("Generator","Campania școlii tale","",'',"lab-camp") + appFrame("Atelier","Regulile clasei noastre","",'',"lab-charter") + appFrame("Netichetă","Neticheta în grupul clasei","",'',"lab-net");
+  if(n===3) labs = appFrame("Simulator","10:15, intervenția ta","Alegi ce faci, minut cu minut. Fiecare decizie mută cei trei indicatori.",'',"lab-sim") + appFrame("Ordonare","Pașii intervenției","",'',"lab-order") + appFrame("Kit","Urgență digitală: ce face victima?","",'',"lab-ev") + appFrame("Constructor","Mesajul „eu”","",'',"lab-imsg") + appFrame("Dileme","Dileme etice ale profesorului","Cinci situații în care două principii bune intră în conflict. Alege, apoi compară cu practica recomandată.",'',"lab-dil");
+  if(n===4) labs = appFrame("Diagnoză","Radarul climatului școlar","",'',"lab-radar") + appFrame("Cerc","Cercul clasei: vicios sau virtuos","",'',"lab-cyc") + appFrame("Generator","Campania școlii tale","",'',"lab-camp") + appFrame("Atelier","Regulile clasei noastre","",'',"lab-charter") + appFrame("Netichetă","Neticheta în grupul clasei","",'',"lab-net");
   return `
   <section class="modhero" data-n="0${n}" style="--mc:${m.color};background:${m.color}">
     <p class="eyebrow" style="color:#fff;opacity:.85">Modulul ${n} · 15 ore</p>
     <h1 style="margin-top:8px">${m.title}</h1>
     <div class="meta"><span class="chip">Teorie: ${m.hours.ts}h sincron + ${m.hours.ta}h asincron</span><span class="chip">Practică: ${m.hours.ps}h sincron + ${m.hours.pa}h asincron</span></div>
     <p class="goal">${m.goal}</p>
+    ${MODQUOTE[n]?`<blockquote class="modquote">„${MODQUOTE[n].q}”<cite>${MODQUOTE[n].s}</cite></blockquote>`:""}
     <div class="sessions">${ss.map(s=>{const d=fmtD(s.d);return `<div class="sess"><b>${d.dow}, ${d.day}</b><br>${s.h} · ${s.ore} ore · online ${s.f}</div>`;}).join("")}</div>
   </section>
   <div class="tabs" role="tablist" data-mtabs>
@@ -2335,10 +2510,10 @@ function mountModule(n){
   $$("[data-goto]",v).forEach(b=>b.onclick=()=>{show(b.dataset.goto); $("[data-mtabs]").scrollIntoView({behavior:REDUCED?"auto":"smooth"});});
   const ep=EPISODES.findIndex(e=>e.m===n);
   mountComic($("[data-comic]",v), ep>=0?ep:2);
-  if(n===1){ mountSorter($("#lab-sorter")); mountFlips($("#lab-forms")); mountFeed($("#lab-feed")); }
+  if(n===1){ mountSorter($("#lab-sorter")); mountFlips($("#lab-forms")); mountFeed($("#lab-feed")); mountLegal($("#lab-lem")); }
   if(n===2){ mountRoles($("#lab-roles")); mountBerg($("#lab-berg")); mountEco($("#lab-eco")); }
-  if(n===3){ mountSim($("#lab-sim")); mountOrder($("#lab-order")); mountEvidence($("#lab-ev")); mountIMsg($("#lab-imsg")); }
-  if(n===4){ mountRadar($("#lab-radar")); mountCampaign($("#lab-camp")); mountCharter($("#lab-charter")); mountNet($("#lab-net")); }
+  if(n===3){ mountSim($("#lab-sim")); mountOrder($("#lab-order")); mountEvidence($("#lab-ev")); mountIMsg($("#lab-imsg")); mountDilemmas($("#lab-dil")); }
+  if(n===4){ mountRadar($("#lab-radar")); mountCycle($("#lab-cyc")); mountCampaign($("#lab-camp")); mountCharter($("#lab-charter")); mountNet($("#lab-net")); }
   mountQuiz($("#lab-quiz"), n);
   bindTasks(v);
   FISE.filter(f=>f.m===n).forEach(fs=>mountFisa($("#fs-"+fs.id), fs));
